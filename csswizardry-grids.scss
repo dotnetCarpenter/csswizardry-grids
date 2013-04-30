@@ -230,6 +230,8 @@ $class-type:            unquote(".");
 
 
     /**
+     * 0. Proposed removal of white space: https://github.com/dotnetCarpenter/white-space
+     *     - is unfortunately stripped away by SASS.
      * 1. Cause columns to stack side-by-side.
      * 2. Space columns apart.
      * 3. Align columns to the tops of each other.
@@ -237,6 +239,7 @@ $class-type:            unquote(".");
      * 5. Required to combine fluid widths and fixed gutters.
      */
     #{$class-type}grid__item{
+        white-space: none;              /* [0] */
         display:inline-block;           /* [1] */
         padding-left:$gutter;           /* [2] */
         vertical-align:top;             /* [3] */
